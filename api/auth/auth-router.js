@@ -42,7 +42,7 @@ router.post('/register', validateUser, userUnique, async (req, res, next) => {
   */
 });
 
-router.post('/login', validateUser, userUnique, (req, res, next) => {
+router.post('/login', validateUser, userExists, (req, res, next) => {
   const { password } = req.body
   if(bcrypt.compareSync(password, req.user.password)) {
     const token = tokenMaker(req.user)
