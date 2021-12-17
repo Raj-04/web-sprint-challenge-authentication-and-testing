@@ -54,6 +54,18 @@ Your finished project must include all of the following requirements (further in
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics.
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
+
+Sessions provide a way to persist data across requests. For example, we'll use them to save authentication information, so there is no need to re-enter credentials on every new request the client makes to the server. When using sessions, each client  will have a unique session stored on he server.
+JSON Web Tokens (JWT) are a way to transmit information between parties in the form of a JSON object. The JSON information is most commonly used for authentication and information exchange.
+
 2. What does `bcryptjs` do to help us store passwords in a secure manner?
+
+Bcryptjs includes password hashing function, implements salting both manually and automatically and accumulative hashing rounds. So that even if someone was somehow able to view user passwords, they would not be able to use the information since it is hashed.
+
 3. How are unit tests different from integration and end-to-end testing?
+
+Unit tests are where we isolate smaller units of software (often functions or methods). Unit tests are fast, they're simple to write and execute, and they're the preferred tool for test driven development(TDD) and behavior driven development(BDD). In addition, developers regularly use them to test correctness in units of code. Integration tests are kind of similar, but they specifically make sure that assertions like api calls are working. End-to-end testing is the most exhausting of the three. It tests the entire application through each possibility of the user-experience making sure that everything a client site works.
+
 4. How does _Test Driven Development_ change the way we write applications and tests?
+
+TDD forces us to adopt a unit test / integration test code style where we write a test detailing what should happen, then we make that expected functionality work in the actual code. It keeps us forcused on all the little tasks needed to build an appliction, making sure each piece works as we go along. This saves time in both the debugging and test-writing phases and thus is a very powerful style.
